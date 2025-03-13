@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Sathiyajeevan\\Downloads\\programering\\poker spil\\poker spil.csproj": {}
+    "C:\\Users\\Sathiyajeevan\\Desktop\\Programming_basics_and_exercises\\poker-spil\\poker spil\\poker spil.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Sathiyajeevan\\Downloads\\programering\\poker spil\\poker spil.csproj": {
+    "C:\\Users\\Sathiyajeevan\\Desktop\\Programming_basics_and_exercises\\poker-spil\\poker spil\\poker spil.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Sathiyajeevan\\Downloads\\programering\\poker spil\\poker spil.csproj",
+        "projectUniqueName": "C:\\Users\\Sathiyajeevan\\Desktop\\Programming_basics_and_exercises\\poker-spil\\poker spil\\poker spil.csproj",
         "projectName": "poker spil",
-        "projectPath": "C:\\Users\\Sathiyajeevan\\Downloads\\programering\\poker spil\\poker spil.csproj",
+        "projectPath": "C:\\Users\\Sathiyajeevan\\Desktop\\Programming_basics_and_exercises\\poker-spil\\poker spil\\poker spil.csproj",
         "packagesPath": "C:\\Users\\Sathiyajeevan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Sathiyajeevan\\Downloads\\programering\\poker spil\\obj\\",
+        "outputPath": "C:\\Users\\Sathiyajeevan\\Desktop\\Programming_basics_and_exercises\\poker-spil\\poker spil\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Sathiyajeevan\\AppData\\Roaming\\NuGet\\NuGet.Config",

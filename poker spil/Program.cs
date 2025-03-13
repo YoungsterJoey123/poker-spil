@@ -4,8 +4,11 @@
     {
         static void Main(string[] args)
         {
-            //fr
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hello, fugfytu!");
         }
+    }
+    public class player()
+    {
+        
     }
 }
