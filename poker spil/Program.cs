@@ -7,8 +7,16 @@
             Console.WriteLine("Hello, fugfytu!");
         }
     }
-    public class player()
+    public class Player()
     {
         
+    }
+    public class Kort()
+    {
+
+    }
+    public class GameLogic()
+    {
+
     }
 }
