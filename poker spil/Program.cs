@@ -7,15 +7,21 @@
             Console.WriteLine("Hello, fugfytu!");
         }
     }
-    public class Player()
+    public class Player
     {
-        
+        Card[] cards = new Card[2];
     }
-    public class Kort()
+    public class Card
     {
-
+        int number;
+        string suit;
+        public Card(int number, string suit)
+        {
+            this.number = number;
+            this.suit = suit;
+        }
     }
-    public class GameLogic()
+    public class GameLogic
     {
 
     }
