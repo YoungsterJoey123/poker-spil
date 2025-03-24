@@ -4,29 +4,36 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, fugfytu!");
+            GameLogic game = new GameLogic(); // Opretter et nyt spil
+            game.DealCards(); // Giver kort til spillerne
+
+            for (int i = 0; i < game.players.Length; i++)
+            {
+                Console.WriteLine($"Player {i + 1}:");
+                Console.WriteLine($"Card 1: {game.players[i].cards[0].number} of suit {game.players[i].cards[0].suit}");
+                Console.WriteLine($"Card 2: {game.players[i].cards[1].number} of suit {game.players[i].cards[1].suit}");
+                Console.WriteLine();
+            }
         }
     }
     public class Player
     {
-        Card[] cards = new Card[2];
+        public Card[] cards = new Card[2]; // Changed to public
     }
     public class Card
     {
-        int number;
-        int suit;
+        public int number;
+        public int suit;
         public Card(int number, int suit)
         {
             this.number = number;
             this.suit = suit;
         }
-
-
     }
     public class GameLogic // Klassen der styrer spillet
     {
-        List<Card> Deck = new List<Card>(); // En liste af kort
-        Player[] players = new Player[4]; // En liste af spillere
+        public List<Card> Deck = new List<Card>(); // En liste af kort
+        public Player[] players = new Player[4]; // En liste af spillere
         public GameLogic()
         {
             for (int i = 1; i < 5; i++) // 1 = hearts, 2 = diamonds, 3 = clubs, 4 = spades
@@ -54,6 +61,19 @@
                 Card value = Deck[k]; // Gemmer kortet på plads k
                 Deck[k] = Deck[n]; // Bytter plads på kortene
                 Deck[n] = value; // Bytter plads på kortene
+            }
+        }
+
+        public void DealCards() // Giver kort til spillerne
+        {
+            ShuffleDeck(); // Blander bunken
+
+            for (int i = 0; i < players.Length; i++) // For hver spiller
+            {
+                players[i].cards[0] = Deck[0]; // Giver spilleren et kort
+                Deck.RemoveAt(0); // Fjerner kortet fra bunken
+                players[i].cards[1] = Deck[0]; // Giver spilleren et kort
+                Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
         }
     }

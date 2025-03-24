@@ -1,0 +1,15 @@
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\bin\Debug\net7.0\poker spil.exe
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\bin\Debug\net7.0\poker spil.deps.json
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\bin\Debug\net7.0\poker spil.runtimeconfig.json
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\bin\Debug\net7.0\poker spil.dll
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\bin\Debug\net7.0\poker spil.pdb
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.AssemblyInfoInputs.cache
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.AssemblyInfo.cs
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.csproj.CoreCompileInputs.cache
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.sourcelink.json
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.dll
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\refint\poker spil.dll
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.pdb
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.genruntimeconfig.cache
+C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\ref\poker spil.dll
