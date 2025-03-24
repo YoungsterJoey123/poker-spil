@@ -20,10 +20,13 @@
             this.number = number;
             this.suit = suit;
         }
+
+
     }
     public class GameLogic // Klassen der styrer spillet
     {
         List<Card> Deck = new List<Card>(); // En liste af kort
+        Player[] players = new Player[4]; // En liste af spillere
         public GameLogic()
         {
             for (int i = 1; i < 5; i++) // 1 = hearts, 2 = diamonds, 3 = clubs, 4 = spades
@@ -32,6 +35,11 @@
                 {
                     Deck.Add(new Card(j, i)); // Tilføjer et kort til bunken
                 }
+            }
+
+            for (int i = 0; i < 4; i++) // Opretter 4 spillere
+            {
+                players[i] = new Player();
             }
         }
 
