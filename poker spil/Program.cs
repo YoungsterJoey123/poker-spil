@@ -30,6 +30,7 @@
             this.suit = suit;
         }
     }
+
     public class GameLogic // Klassen der styrer spillet
     {
         public List<Card> Deck = new List<Card>(); // En liste af kort

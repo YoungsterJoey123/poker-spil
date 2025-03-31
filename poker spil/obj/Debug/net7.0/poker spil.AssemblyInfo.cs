@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("poker spil")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ed23e26ab3a059ef6bd4a1494a40be6b9dfbb5f9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0f2ad818d4948dcb6e59776f8c657fb680d4ffb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("poker spil")]
 [assembly: System.Reflection.AssemblyTitleAttribute("poker spil")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
