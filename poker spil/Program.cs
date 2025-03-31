@@ -18,7 +18,7 @@
     }
     public class Player
     {
-        public Card[] cards = new Card[2]; // Changed to public
+        public Card[] cards = new Card[2]; 
     }
     public class Card
     {
