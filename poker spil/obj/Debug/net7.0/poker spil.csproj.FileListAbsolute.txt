@@ -13,3 +13,17 @@ C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programm
 C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.pdb
 C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\poker spil.genruntimeconfig.cache
 C:\Users\Steffan\OneDrive - Grindsted Gymnasie- & Erhvervsskole\2.g HTX\Programmering\Dronefildata\poker-spil\poker spil\obj\Debug\net7.0\ref\poker spil.dll
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\bin\Debug\net7.0\poker spil.exe
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\bin\Debug\net7.0\poker spil.deps.json
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\bin\Debug\net7.0\poker spil.runtimeconfig.json
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\bin\Debug\net7.0\poker spil.dll
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\bin\Debug\net7.0\poker spil.pdb
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.AssemblyInfoInputs.cache
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.AssemblyInfo.cs
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.csproj.CoreCompileInputs.cache
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.dll
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\refint\poker spil.dll
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.pdb
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\poker spil.genruntimeconfig.cache
+C:\Users\Sathiyajeevan\Desktop\Programming_basics_and_exercises\poker-spil\poker spil\obj\Debug\net7.0\ref\poker spil.dll
