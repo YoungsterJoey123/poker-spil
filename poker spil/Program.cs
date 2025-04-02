@@ -15,15 +15,21 @@
                 Console.WriteLine();
             }
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine($"Table card {i + 1}: {game.tableCards[i].number} of suit {game.tableCards[i].suit}");
             }
+            Console.WriteLine();
+
+            game.CheckHand();
+
+
         }
     }
     public class Player
     {
         public Card[] cards = new Card[2]; 
+        public int HighCard;
     }
     public class Card
     {
@@ -45,7 +51,7 @@
         {
             for (int i = 1; i < 5; i++) // 1 = hearts, 2 = diamonds, 3 = clubs, 4 = spades
             {
-                for (int j = 1; j < 14; j++) // 1 = ace, 2-10 = 2-10, 11 = jack, 12 = queen, 13 = king
+                for (int j = 0; j < 13; j++) // 0 = 2, 1 = 3, 2 = 4, ..., 12 = ace
                 {
                     Deck.Add(new Card(j, i)); // Tilføjer et kort til bunken
                 }
@@ -83,11 +89,66 @@
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 5; i++)
             {
                 tableCards[i] = Deck[0]; // Giver bordet et kort
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
+        }
+
+        public void CheckHand()
+        {
+            for (int i = 0; i < players.Length; i++)
+            {
+                if (players[i].cards[0].number > players[i].cards[1].number)
+                {
+                    players[i].HighCard = players[i].cards[0].number;
+                }
+                else
+                {
+                    players[i].HighCard = players[i].cards[1].number;
+                }
+            }
+
+            for (int i = 0; i < players.Length; i++)
+            {
+                Console.WriteLine($"Player {i + 1} has a high card of {players[i].HighCard}");
+            }
+            Console.WriteLine();
+
+            for ( int i = 0; i < players.Length; i++)
+            {
+                if (players[i].cards[0].number == players[i].cards[1].number)
+                {
+                    Console.WriteLine($"Player {i + 1} has a pair of {players[i].cards[0].number}"); 
+                }
+                for (int j = 0; j < tableCards.Length; j++)
+                {
+                    if (players[i].cards[0].number == tableCards[j].number)
+                    {
+                        Console.WriteLine($"Player {i + 1} has a pair of {players[i].cards[0].number}");
+                    }
+                    if (players[i].cards[1].number == tableCards[j].number)
+                    {
+                        Console.WriteLine($"Player {i + 1} has a pair of {players[i].cards[1].number}");
+                    }
+                }
+            }
+
+            for (int j = 0; j < tableCards.Length; j++)
+            {
+                for (int i = j + 1; i < tableCards.Length; i++)
+                {
+                    if (tableCards[j].number == tableCards[i].number && j != i)
+                    {
+                        Console.WriteLine($"There is a pair of {tableCards[j].number} on the table");
+                    }
+                    
+
+                }
+            }
+
+
         }
     }
 }
