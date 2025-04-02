@@ -14,6 +14,11 @@
                 Console.WriteLine($"Card 2: {game.players[i].cards[1].number} of suit {game.players[i].cards[1].suit}");
                 Console.WriteLine();
             }
+
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"Table card {i + 1}: {game.tableCards[i].number} of suit {game.tableCards[i].suit}");
+            }
         }
     }
     public class Player
@@ -33,6 +38,7 @@
 
     public class GameLogic // Klassen der styrer spillet
     {
+        public Card[] tableCards = new Card[5]; // En liste af bordkort
         public List<Card> Deck = new List<Card>(); // En liste af kort
         public Player[] players = new Player[4]; // En liste af spillere
         public GameLogic()
@@ -74,6 +80,12 @@
                 players[i].cards[0] = Deck[0]; // Giver spilleren et kort
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
                 players[i].cards[1] = Deck[0]; // Giver spilleren et kort
+                Deck.RemoveAt(0); // Fjerner kortet fra bunken
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                tableCards[i] = Deck[0]; // Giver bordet et kort
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
         }
