@@ -98,57 +98,48 @@
 
         public void CheckHand()
         {
-            for (int i = 0; i < players.Length; i++)
+            for(int i = 0; i < players.Length; i++)
             {
-                if (players[i].cards[0].number > players[i].cards[1].number)
+                int handvalue = 0;
+                if (tableCards[0].suit == tableCards[1].suit &&
+                    tableCards[0].suit == tableCards[2].suit &&
+                    tableCards[0].suit == players[i].cards[0].suit &&
+                    tableCards[0].suit == players[i].cards[1].suit)
                 {
-                    players[i].HighCard = players[i].cards[0].number;
-                }
-                else
-                {
-                    players[i].HighCard = players[i].cards[1].number;
-                }
-            }
-
-            for (int i = 0; i < players.Length; i++)
-            {
-                Console.WriteLine($"Player {i + 1} has a high card of {players[i].HighCard}");
-            }
-            Console.WriteLine();
-
-            for ( int i = 0; i < players.Length; i++)
-            {
-                if (players[i].cards[0].number == players[i].cards[1].number)
-                {
-                    Console.WriteLine($"Player {i + 1} has a pair of {players[i].cards[0].number}"); 
-                }
-                for (int j = 0; j < tableCards.Length; j++)
-                {
-                    if (players[i].cards[0].number == tableCards[j].number)
+                    Card[] combined = new Card[tableCards.Length + 2];
+                    combined.CopyTo(tableCards, 0);
+                    combined.CopyTo(players[i].cards, tableCards.Length - 1);
+                    int royalflushcounter = 0;
+                    for (int j = 0; j < combined.Length; j++)
                     {
-                        Console.WriteLine($"Player {i + 1} has a pair of {players[i].cards[0].number}");
+                        if (combined[j].number == 8)
+                        {
+                            royalflushcounter++;
+                        }
+                        if (combined[j].number == 9)
+                        {
+                            royalflushcounter++;
+                        }
+                        if (combined[j].number == 10)
+                        {
+                            royalflushcounter++;
+                        }
+                        if (combined[j].number == 11)
+                        {
+                            royalflushcounter++;
+                        }
+                        if (combined[j].number == 12)
+                        {
+                            royalflushcounter++;
+                        }
                     }
-                    if (players[i].cards[1].number == tableCards[j].number)
+                    if (royalflushcounter == 5)
                     {
-                        Console.WriteLine($"Player {i + 1} has a pair of {players[i].cards[1].number}");
+                        Console.WriteLine($"Player {i + 1} has a royal flush");
+                        handvalue = 1000000000;
                     }
                 }
             }
-
-            for (int j = 0; j < tableCards.Length; j++)
-            {
-                for (int i = j + 1; i < tableCards.Length; i++)
-                {
-                    if (tableCards[j].number == tableCards[i].number && j != i)
-                    {
-                        Console.WriteLine($"There is a pair of {tableCards[j].number} on the table");
-                    }
-                    
-
-                }
-            }
-
-
         }
     }
 }
