@@ -102,15 +102,15 @@
             for(int i = 0; i < players.Length; i++)
             {
                 Card[] combined = new Card[tableCards.Length + 2];
-                combined.CopyTo(tableCards, 0);
-                combined.CopyTo(players[i].cards, tableCards.Length - 1);
+                tableCards.CopyTo(combined, 0);
+                players[i].cards.CopyTo(combined, tableCards.Length);
                 int handvalue = 0;
+
                 if (tableCards[0].suit == tableCards[1].suit && //royal flush
                     tableCards[0].suit == tableCards[2].suit &&
                     tableCards[0].suit == players[i].cards[0].suit &&
                     tableCards[0].suit == players[i].cards[1].suit)
-                {
-                    
+                {                    
                     int royalflushcounter = 0;
                     for (int j = 0; j < combined.Length; j++)
                     {
@@ -140,6 +140,54 @@
                         Console.WriteLine($"Player {i + 1} has a royal flush");
                         handvalue = 1000000000;
                     }
+                }
+
+                int HeartCounter = 0;
+                int DiamondCounter = 0;
+                int ClubCounter = 0;
+                int SpadeCounter = 0;
+
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    if (combined[j].suit == 1)
+                    {
+                        HeartCounter++;
+                    }
+                    if (combined[j].suit == 2)
+                    {
+                        DiamondCounter++;
+                    }
+                    if (combined[j].suit == 3)
+                    {
+                        ClubCounter++;
+                    }
+                    if (combined[j].suit == 4)
+                    {
+                        SpadeCounter++;
+                    }
+                }
+                if (HeartCounter == 5 || DiamondCounter == 5 || ClubCounter == 5 || SpadeCounter == 5) // flush
+                {
+                    Console.WriteLine($"Player {i + 1} has a flush");
+                    handvalue = 5;
+                }
+
+                int PairCounter = 0;
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    for (int k = j + 1; k < combined.Length; k++)
+                    {
+                        if (combined[j].number == combined[k].number)
+                        {
+                            PairCounter++;
+                        }
+                    }
+                }
+                if (PairCounter >= 1) // par
+                {
+                    Console.WriteLine($"Player {i + 1} has a pair");
+                    handvalue = 2;
+                    PairCounter = 0;
                 }
             }
         }
