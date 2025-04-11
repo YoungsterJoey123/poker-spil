@@ -98,17 +98,19 @@
 
         public void CheckHand()
         {
+
             for(int i = 0; i < players.Length; i++)
             {
+                Card[] combined = new Card[tableCards.Length + 2];
+                combined.CopyTo(tableCards, 0);
+                combined.CopyTo(players[i].cards, tableCards.Length - 1);
                 int handvalue = 0;
-                if (tableCards[0].suit == tableCards[1].suit &&
+                if (tableCards[0].suit == tableCards[1].suit && //royal flush
                     tableCards[0].suit == tableCards[2].suit &&
                     tableCards[0].suit == players[i].cards[0].suit &&
                     tableCards[0].suit == players[i].cards[1].suit)
                 {
-                    Card[] combined = new Card[tableCards.Length + 2];
-                    combined.CopyTo(tableCards, 0);
-                    combined.CopyTo(players[i].cards, tableCards.Length - 1);
+                    
                     int royalflushcounter = 0;
                     for (int j = 0; j < combined.Length; j++)
                     {
