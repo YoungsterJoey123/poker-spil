@@ -172,6 +172,45 @@
                     handvalue = 5;
                 }
 
+                int ThreeOfAKindCounter = 0;
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    for (int k = j + 1; k < combined.Length; k++)
+                    {
+                        if (combined[j].number == combined[k].number)
+                        {
+                            ThreeOfAKindCounter++;
+                        }
+                    }
+                    if (ThreeOfAKindCounter >= 3) // three of a kind
+                    {
+                        Console.WriteLine($"Player {i + 1} has three of a kind");
+                        handvalue = 3;
+                        ThreeOfAKindCounter = 0;
+                        break;
+                    }
+                }
+                
+
+                int toPairCounter = 0;
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    for (int k = j + 1; k < combined.Length; k++)
+                    {
+                        if (combined[j].number == combined[k].number)
+                        {
+                            toPairCounter++;
+                        }
+                    }
+                    if (toPairCounter >= 2) // two pair
+                    {
+                        Console.WriteLine($"Player {i + 1} has two pair");
+                        handvalue = 4;
+                        toPairCounter = 0;
+                        break;
+                    }
+                }
+
                 int PairCounter = 0;
                 for (int j = 0; j < combined.Length; j++)
                 {
