@@ -172,6 +172,55 @@
                     handvalue = 5;
                 }
 
+                //Card HighCard1 = combined[0];
+                //Card HighCard2 = combined[1];
+                //Card HighCard3 = combined[2];
+                int LargestDifference = 0;
+                int LargestDifferenceIndex = -1;
+                Card[] HighCard = new Card[3];
+
+                for (int j = 0; j < HighCard.Length; j++)
+                {
+                    HighCard[j] = combined[j];                    
+                }
+                for (int j = 0; j < HighCard.Length; j++)
+                {
+                    if (combined[j + 3].number - HighCard[j].number > LargestDifference)
+                    {
+
+                    }
+                }
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    if (HighCard1.number < combined[j].number)
+                    {
+                        HighCard1 = combined[j];
+                    }
+                }
+                int StraightCounter = 0;
+                int num = 1;
+                for (int j = 0; j < 5; j++)
+                {
+                    for (int k = 0; k < combined.Length; k++)
+                    {
+                        if (combined[k].number == HighCard1.number - num)
+                        {
+                            num++;
+                            StraightCounter++;
+                            HighCard1 = combined[k];
+                        }
+                    }
+                }
+                if (StraightCounter == 5)
+                {
+
+                    Console.WriteLine($"Player {i + 1} has a straight");
+                    handvalue = 2;
+                    StraightCounter = 0;
+                }
+
+
+
                 int ThreeOfAKindCounter = 0;
                 for (int j = 0; j < combined.Length; j++)
                 {
