@@ -28,8 +28,13 @@
     }
     public class Player
     {
-        public Card[] cards = new Card[2]; 
+        public Card[] cards = new Card[2];
         public int HighCard;
+        public int handvalue;
+        public Player(int handvalue) 
+        {
+            this.handvalue = handvalue;
+        }
     }
     public class Card
     {
@@ -59,7 +64,7 @@
 
             for (int i = 0; i < 4; i++) // Opretter 4 spillere
             {
-                players[i] = new Player();
+                players[i] = new Player(0);
             }
         }
 
@@ -104,7 +109,7 @@
                 Card[] combined = new Card[tableCards.Length + 2];
                 tableCards.CopyTo(combined, 0);
                 players[i].cards.CopyTo(combined, tableCards.Length);
-                int handvalue = 0;
+                
 
                 if (tableCards[0].suit == tableCards[1].suit && //royal flush
                     tableCards[0].suit == tableCards[2].suit &&
@@ -138,7 +143,7 @@
                     if (royalflushcounter == 5)
                     {
                         Console.WriteLine($"Player {i + 1} has a royal flush");
-                        handvalue = 1000000000;
+                        players[i].handvalue = 1000000000;
                     }
                 }
 
@@ -169,53 +174,57 @@
                 if (HeartCounter == 5 || DiamondCounter == 5 || ClubCounter == 5 || SpadeCounter == 5) // flush
                 {
                     Console.WriteLine($"Player {i + 1} has a flush");
-                    handvalue = 5;
+                    players[i].handvalue = 5;
                 }
 
                 //Card HighCard1 = combined[0];
                 //Card HighCard2 = combined[1];
                 //Card HighCard3 = combined[2];
-                int LargestDifference = 0;
-                int LargestDifferenceIndex = -1;
+                
                 Card[] HighCard = new Card[3];
+                List<Card> combinedList = combined.ToList();
 
+
+
+                
                 for (int j = 0; j < HighCard.Length; j++)
                 {
-                    HighCard[j] = combined[j];                    
-                }
-                for (int j = 0; j < HighCard.Length; j++)
-                {
-                    if (combined[j + 3].number - HighCard[j].number > LargestDifference)
+                    int highestcardindex = 0;
+                    for (int k = 0; k < combinedList.Count; k++)
                     {
-
+                        if (combinedList[highestcardindex].number < combinedList[k].number)
+                        {
+                            highestcardindex = k;
+                        }
                     }
+                    HighCard[j] = combinedList[highestcardindex];
+                    combinedList.RemoveAt(highestcardindex);
                 }
-                for (int j = 0; j < combined.Length; j++)
-                {
-                    if (HighCard1.number < combined[j].number)
-                    {
-                        HighCard1 = combined[j];
-                    }
-                }
+                
+                    
                 int StraightCounter = 0;
                 int num = 1;
-                for (int j = 0; j < 5; j++)
+                for(int h =  0; h < HighCard.Length; h++)
                 {
-                    for (int k = 0; k < combined.Length; k++)
+                    for (int j = 0; j < 5; j++)
                     {
-                        if (combined[k].number == HighCard1.number - num)
+                        for (int k = 0; k < combined.Length; k++)
                         {
-                            num++;
-                            StraightCounter++;
-                            HighCard1 = combined[k];
+                            if (combined[k].number == HighCard[h].number - num)
+                            {
+                                num++;
+                                StraightCounter++;
+                                HighCard[h] = combined[k];
+                            }
                         }
                     }
                 }
+                    
                 if (StraightCounter == 5)
                 {
 
                     Console.WriteLine($"Player {i + 1} has a straight");
-                    handvalue = 2;
+                    players[i].handvalue = 4;
                     StraightCounter = 0;
                 }
 
@@ -234,7 +243,7 @@
                     if (ThreeOfAKindCounter >= 3) // three of a kind
                     {
                         Console.WriteLine($"Player {i + 1} has three of a kind");
-                        handvalue = 3;
+                        players[i].handvalue = 3;
                         ThreeOfAKindCounter = 0;
                         break;
                     }
@@ -254,7 +263,7 @@
                     if (toPairCounter >= 2) // two pair
                     {
                         Console.WriteLine($"Player {i + 1} has two pair");
-                        handvalue = 4;
+                        players[i].handvalue = 4;
                         toPairCounter = 0;
                         break;
                     }
@@ -274,10 +283,35 @@
                 if (PairCounter >= 1) // par
                 {
                     Console.WriteLine($"Player {i + 1} has a pair");
-                    handvalue = 2;
+                    players[i].handvalue = 2;
                     PairCounter = 0;
                 }
             }
+            if (players[0].handvalue > players[1].handvalue 
+                & players[0].handvalue > players[2].handvalue 
+                & players[0].handvalue > players[3].handvalue)
+            {
+                Console.Write("Player 1 wins");
+            }
+            if (players[1].handvalue > players[0].handvalue
+                & players[1].handvalue > players[2].handvalue
+                & players[1].handvalue > players[3].handvalue)
+            {
+                Console.Write("Player 2 wins");
+            }
+            if (players[2].handvalue > players[1].handvalue
+                & players[2].handvalue > players[0].handvalue
+                & players[2].handvalue > players[3].handvalue)
+            {
+                Console.Write("Player 3 wins");
+            }
+            if (players[3].handvalue > players[1].handvalue
+                & players[3].handvalue > players[2].handvalue
+                & players[3].handvalue > players[0].handvalue)
+            {
+                Console.Write("Player 4 wins");
+            }
+
         }
     }
 }
