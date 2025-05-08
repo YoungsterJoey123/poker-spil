@@ -96,16 +96,16 @@ namespace poker_spil
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
 
-            for (int i = 0; i < 5; i++)
-            {
-                tableCards[i] = Deck[0]; // Giver bordet et kort
-                Deck.RemoveAt(0); // Fjerner kortet fra bunken
-            }
-            //tableCards[0] = new Card(12, 1);
-            //tableCards[1] = new Card(11, 1);
-            //tableCards[2] = new Card(10, 1);
-            //tableCards[3] = new Card(9, 1);
-            //tableCards[4] = new Card(8, 1);
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    tableCards[i] = Deck[0]; // Giver bordet et kort
+            //    Deck.RemoveAt(0); // Fjerner kortet fra bunken
+            //}
+            tableCards[0] = new Card(1, 1);
+            tableCards[1] = new Card(1, 2);
+            tableCards[2] = new Card(1, 4);
+            tableCards[3] = new Card(9, 1);
+            tableCards[4] = new Card(8, 1);
         }
 
         public void CheckHand()
@@ -271,10 +271,10 @@ namespace poker_spil
                             fourOfAKindCounter++;
                         }
                     }
-                    if (fourOfAKindCounter >= 4) // three of a kind
+                    if (fourOfAKindCounter >= 4) // four of a kind
                     {
-                        Console.WriteLine($"Player {i + 1} has three of a kind");
-                        players[i].handvalue = 3;
+                        Console.WriteLine($"Player {i + 1} has four of a kind");
+                        players[i].handvalue = 6;
                         fourOfAKindCounter = 0;
                         break;
                     }
