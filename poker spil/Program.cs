@@ -1,4 +1,6 @@
-﻿namespace poker_spil
+﻿using System.Security.Cryptography;
+
+namespace poker_spil
 {
     internal class Program
     {
@@ -118,6 +120,99 @@
                 int ClubCounter = 0;
                 int SpadeCounter = 0;
 
+                int PairCounter = 0;
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    for (int k = j + 1; k < combined.Length; k++)
+                    {
+                        if (combined[j].number == combined[k].number)
+                        {
+                            PairCounter++;
+                        }
+                    }
+                }
+                if (PairCounter >= 1) // par
+                {
+                    Console.WriteLine($"Player {i + 1} has a pair");
+                    players[i].handvalue = 2;
+                    PairCounter = 0;
+                }
+
+                int toPairCounter = 0;
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    for (int k = j + 1; k < combined.Length; k++)
+                    {
+                        if (combined[j].number == combined[k].number)
+                        {
+                            toPairCounter++;
+                        }
+                    }
+                    if (toPairCounter >= 2) // two pair
+                    {
+                        Console.WriteLine($"Player {i + 1} has two pair");
+                        players[i].handvalue = 4;
+                        toPairCounter = 0;
+                        break;
+                    }
+                }
+
+                int ThreeOfAKindCounter = 0;
+                for (int j = 0; j < combined.Length; j++)
+                {
+                    for (int k = j + 1; k < combined.Length; k++)
+                    {
+                        if (combined[j].number == combined[k].number)
+                        {
+                            ThreeOfAKindCounter++;
+                        }
+                    }
+                    if (ThreeOfAKindCounter >= 3) // three of a kind
+                    {
+                        Console.WriteLine($"Player {i + 1} has three of a kind");
+                        players[i].handvalue = 3;
+                        ThreeOfAKindCounter = 0;
+                        break;
+                    }
+                }
+
+                for (int j = 0; j < HighCard.Length; j++)
+                {
+                    int highestcardindex = 0;
+                    for (int k = 0; k < combinedList.Count; k++)
+                    {
+                        if (combinedList[highestcardindex].number < combinedList[k].number)
+                        {
+                            highestcardindex = k;
+                        }
+                    }
+                    HighCard[j] = combinedList[highestcardindex];
+                    combinedList.RemoveAt(highestcardindex);
+                }
+                int StraightCounter = 0;
+                int num = 1;
+                for (int h = 0; h < HighCard.Length; h++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        for (int k = 0; k < combined.Length; k++)
+                        {
+                            if (combined[k].number == HighCard[h].number - num)
+                            {
+                                num++;
+                                StraightCounter++;
+                                HighCard[h] = combined[k];
+                            }
+                        }
+                    }
+                }
+                if (StraightCounter == 5) //straight
+                {
+                    Console.WriteLine($"Player {i + 1} has a straight");
+                    players[i].handvalue = 4;
+                    StraightCounter = 0;
+                }
+
                 for (int j = 0; j < combined.Length; j++)
                 {
                     if (combined[j].suit == 1)
@@ -144,141 +239,33 @@
                 }
 
                 
-                for (int j = 0; j < HighCard.Length; j++)
-                {
-                    int highestcardindex = 0;
-                    for (int k = 0; k < combinedList.Count; k++)
-                    {
-                        if (combinedList[highestcardindex].number < combinedList[k].number)
-                        {
-                            highestcardindex = k;
-                        }
-                    }
-                    HighCard[j] = combinedList[highestcardindex];
-                    combinedList.RemoveAt(highestcardindex);
-                }
+                
                 
                     
-                int StraightCounter = 0;
-                int num = 1;
-                for(int h =  0; h < HighCard.Length; h++)
-                {
-                    for (int j = 0; j < 5; j++)
-                    {
-                        for (int k = 0; k < combined.Length; k++)
-                        {
-                            if (combined[k].number == HighCard[h].number - num)
-                            {
-                                num++;
-                                StraightCounter++;
-                                HighCard[h] = combined[k];
-                            }
-                        }
-                    }
-                }                  
-                if (StraightCounter == 5)
-                {
-
-                    Console.WriteLine($"Player {i + 1} has a straight");
-                    players[i].handvalue = 4;
-                    StraightCounter = 0;
-                }
-
-
-                int ThreeOfAKindCounter = 0;
-                for (int j = 0; j < combined.Length; j++)
-                {
-                    for (int k = j + 1; k < combined.Length; k++)
-                    {
-                        if (combined[j].number == combined[k].number)
-                        {
-                            ThreeOfAKindCounter++;
-                        }
-                    }
-                    if (ThreeOfAKindCounter >= 3) // three of a kind
-                    {
-                        Console.WriteLine($"Player {i + 1} has three of a kind");
-                        players[i].handvalue = 3;
-                        ThreeOfAKindCounter = 0;
-                        break;
-                    }
-                }
                 
 
-                int toPairCounter = 0;
-                for (int j = 0; j < combined.Length; j++)
-                {
-                    for (int k = j + 1; k < combined.Length; k++)
-                    {
-                        if (combined[j].number == combined[k].number)
-                        {
-                            toPairCounter++;
-                        }
-                    }
-                    if (toPairCounter >= 2) // two pair
-                    {
-                        Console.WriteLine($"Player {i + 1} has two pair");
-                        players[i].handvalue = 4;
-                        toPairCounter = 0;
-                        break;
-                    }
-                }
+
+                
+                
+
+                
 
 
-                int PairCounter = 0;
-                for (int j = 0; j < combined.Length; j++)
+                for(int j = 0; j < combined.Length;j++)
                 {
-                    for (int k = j + 1; k < combined.Length; k++)
-                    {
-                        if (combined[j].number == combined[k].number)
-                        {
-                            PairCounter++;
-                        }
-                    }
-                }
-                if (PairCounter >= 1) // par
-                {
-                    Console.WriteLine($"Player {i + 1} has a pair");
-                    players[i].handvalue = 2;
-                    PairCounter = 0;
-                }
-            }
-
-            if (tableCards[0].suit == tableCards[1].suit && //royal flush
-            tableCards[0].suit == tableCards[2].suit &&
-            tableCards[0].suit == players[i].cards[0].suit &&
-            tableCards[0].suit == players[i].cards[1].suit)
-            {
-                int royalflushcounter = 0;
-                for (int j = 0; j < combined.Length; j++)
-                {
-                    if (combined[j].number == 8)
-                    {
-                        royalflushcounter++;
-                    }
-                    if (combined[j].number == 9)
-                    {
-                        royalflushcounter++;
-                    }
-                    if (combined[j].number == 10)
-                    {
-                        royalflushcounter++;
-                    }
-                    if (combined[j].number == 11)
-                    {
-                        royalflushcounter++;
-                    }
                     if (combined[j].number == 12)
                     {
-                        royalflushcounter++;
+                        for(int k = 0; k < combined.Length; k++)
+                        {
+                            if (combined[k].number == 11 && combined[k].suit == combined[j].suit)
+                        }
                     }
                 }
-                if (royalflushcounter == 5)
-                {
-                    Console.WriteLine($"Player {i + 1} has a royal flush");
-                    players[i].handvalue = 1000000000;
-                }
+
+                
             }
+
+            
 
             if (players[0].handvalue > players[1].handvalue 
                 & players[0].handvalue > players[2].handvalue 
