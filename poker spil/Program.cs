@@ -101,11 +101,7 @@ namespace poker_spil
                 tableCards[i] = Deck[0]; // Giver bordet et kort
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
-            tableCards[0] = new Card(1, 1);
-            tableCards[1] = new Card(1, 2);
-            tableCards[2] = new Card(1, 4);
-            tableCards[3] = new Card(9, 1);
-            tableCards[4] = new Card(8, 1);
+           
         }
 
         public void CheckHand()
@@ -185,17 +181,17 @@ namespace poker_spil
                     }
                 }
 
-                for (int j = 0; j < highCard.Length; j++)
+                for (int j = 0; j < highCard.Length; j++)//kære til den finder de 3 højeste kort
                 {
-                    int highestcardindex = 0;
+                    int highestcardindex = 0;//gemme index af højeste kort
                     for (int k = 0; k < combinedList.Count; k++)
                     {
-                        if (combinedList[highestcardindex].number < combinedList[k].number)
+                        if (combinedList[highestcardindex].number < combinedList[k].number)//hvis det højeste korts nummer er mindere end de samlede korts k's nummer
                         {
-                            highestcardindex = k;
+                            highestcardindex = k;//index af højeste kort bliver = k
                         }
                     }
-                    highCard[j] = combinedList[highestcardindex];
+                    highCard[j] = combinedList[highestcardindex];//tilføjer det højsete kort til highcard arrat
                     combinedList.RemoveAt(highestcardindex);
                 }
                 int StraightCounter = 0;
@@ -206,7 +202,7 @@ namespace poker_spil
                     {
                         for (int k = 0; k < combined.Length; k++)
                         {
-                            if (combined[k].number == highCard[h].number - num)
+                            if (combined[k].number == highCard[h].number - num)//tjekker om det k-kort er det samme som h-highcard - num
                             {
                                 num++;
                                 StraightCounter++;
@@ -214,6 +210,7 @@ namespace poker_spil
                             }
                         }
                     }
+                    num = 0;
                 }
                 if (StraightCounter == 5) //straight
                 {
