@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "50QUxpq06w1Aj05kLfc+hlWbk5PISO9u5isL9c9SYWb5+LLv49kxJyFEVqDLVD0xaJ3AH8WdG7gv35SHz8s7Ag==",
+  "dgSpecHash": "iqpp3Q1K6Hg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sathiyajeevan\\Desktop\\Programming_basics_and_exercises\\poker-spil\\poker spil\\poker spil.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\lucas\\Documents\\GitHub\\poker-spil\\poker spil\\poker spil.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
+    "C:\\Users\\lucas\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
+  ],
   "logs": []
 }
