@@ -101,6 +101,11 @@ namespace poker_spil
                 tableCards[i] = Deck[0]; // Giver bordet et kort
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
+            //tableCards[0] = new Card(12, 1);
+            //tableCards[1] = new Card(11, 1);
+            //tableCards[2] = new Card(10, 1);
+            //tableCards[3] = new Card(9, 1);
+            //tableCards[4] = new Card(8, 1);
         }
 
         public void CheckHand()
@@ -232,7 +237,7 @@ namespace poker_spil
                         SpadeCounter++;
                     }
                 }
-                if (HeartCounter == 5 || DiamondCounter == 5 || ClubCounter == 5 || SpadeCounter == 5) // flush
+                if (HeartCounter >= 5 || DiamondCounter >= 5 || ClubCounter >= 5 || SpadeCounter >= 5) // flush
                 {
                     Console.WriteLine($"Player {i + 1} has a flush");
                     players[i].handvalue = 5;
@@ -258,40 +263,47 @@ namespace poker_spil
                         for(int k = 0; k < combined.Length; k++)
                         {
                             if (combined[k].number == 11 && combined[k].suit == combined[j].suit)
+                            {
+                                for (int l = 0; l < combined.Length; l++)
+                                {
+                                    if (combined[l].number == 10 && combined[l].suit == combined[j].suit)
+                                    {
+                                        for (int h = 0; h < combined.Length; h++)
+                                        {
+                                            if (combined[h].number == 9 && combined[h].suit == combined[j].suit)
+                                            {
+                                                for (int g = 0; g < combined.Length; g++)
+                                                {
+                                                    if (combined[g].number == 8 && combined[g].suit == combined[j].suit)
+                                                    {
+                                                        Console.WriteLine($"Player {i + 1} has a Royal flush");
+                                                        players[i].handvalue = 10000000;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
+                }                    
+            }
+            int bestValue = 0;
+            for (int i = 0; i < players.Length; i++)
+            {
+                if (players[i].handvalue > bestValue)
+                {
+                    bestValue = players[i].handvalue;
                 }
-
-                
             }
-
-            
-
-            if (players[0].handvalue > players[1].handvalue 
-                & players[0].handvalue > players[2].handvalue 
-                & players[0].handvalue > players[3].handvalue)
+            for (int i= 0; i < players.Length; i++)
             {
-                Console.Write("Player 1 wins");
+                if (players[i].handvalue == bestValue)
+                {
+                    Console.WriteLine($"Player {i + 1} has won");
+                }
             }
-            if (players[1].handvalue > players[0].handvalue
-                & players[1].handvalue > players[2].handvalue
-                & players[1].handvalue > players[3].handvalue)
-            {
-                Console.Write("Player 2 wins");
-            }
-            if (players[2].handvalue > players[1].handvalue
-                & players[2].handvalue > players[0].handvalue
-                & players[2].handvalue > players[3].handvalue)
-            {
-                Console.Write("Player 3 wins");
-            }
-            if (players[3].handvalue > players[1].handvalue
-                & players[3].handvalue > players[2].handvalue
-                & players[3].handvalue > players[0].handvalue)
-            {
-                Console.Write("Player 4 wins");
-            }
-
         }
     }
 }
