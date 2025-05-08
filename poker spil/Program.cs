@@ -96,11 +96,11 @@ namespace poker_spil
                 Deck.RemoveAt(0); // Fjerner kortet fra bunken
             }
 
-            //for (int i = 0; i < 5; i++)
-            //{
-            //    tableCards[i] = Deck[0]; // Giver bordet et kort
-            //    Deck.RemoveAt(0); // Fjerner kortet fra bunken
-            //}
+            for (int i = 0; i < 5; i++)
+            {
+                tableCards[i] = Deck[0]; // Giver bordet et kort
+                Deck.RemoveAt(0); // Fjerner kortet fra bunken
+            }
             tableCards[0] = new Card(1, 1);
             tableCards[1] = new Card(1, 2);
             tableCards[2] = new Card(1, 4);
@@ -292,25 +292,25 @@ namespace poker_spil
 
 
 
-                for (int j = 0; j < combined.Length;j++)
+                for (int j = 0; j < combined.Length;j++)//kører igennem spilleren og bordets kort
                 {
-                    if (combined[j].number == 12)
+                    if (combined[j].number == 12)//tjekker efter en es
                     {
-                        for(int k = 0; k < combined.Length; k++)
+                        for(int k = 0; k < combined.Length; k++)//kører igennem spilleren og bordets kort
                         {
-                            if (combined[k].number == 11 && combined[k].suit == combined[j].suit)
+                            if (combined[k].number == 11 && combined[k].suit == combined[j].suit)//tjekker efter en konge og om den har samme kulør som es'en
                             {
-                                for (int l = 0; l < combined.Length; l++)
+                                for (int l = 0; l < combined.Length; l++)//kører igennem spilleren og bordets kort
                                 {
-                                    if (combined[l].number == 10 && combined[l].suit == combined[j].suit)
+                                    if (combined[l].number == 10 && combined[l].suit == combined[j].suit)//tjekker efter en konge og om den har samme kulør som es'en
                                     {
-                                        for (int h = 0; h < combined.Length; h++)
+                                        for (int h = 0; h < combined.Length; h++)//kører igennem spilleren og bordets kort
                                         {
-                                            if (combined[h].number == 9 && combined[h].suit == combined[j].suit)
+                                            if (combined[h].number == 9 && combined[h].suit == combined[j].suit)//tjekker efter en konge og om den har samme kulør som es'en
                                             {
-                                                for (int g = 0; g < combined.Length; g++)
+                                                for (int g = 0; g < combined.Length; g++)//kører igennem spilleren og bordets kort
                                                 {
-                                                    if (combined[g].number == 8 && combined[g].suit == combined[j].suit)
+                                                    if (combined[g].number == 8 && combined[g].suit == combined[j].suit)//tjekker efter en konge og om den har samme kulør som es'en
                                                     {
                                                         Console.WriteLine($"Player {i + 1} has a Royal flush");
                                                         players[i].handvalue = 10000000;
